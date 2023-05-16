@@ -1,0 +1,51 @@
+#survey-body {
+  margin: 2em;
+  margin-top: 3em;
+}
+
+#follow-up-hotel-questions, #follow-up-payment-questions{
+  display: none;
+  margin: 1em;
+  margin-top: 1em;
+  color: #7f8c8d;
+}
+
+#follow-up-hotel-questions, #follow-up-payment-questions label{
+  color: #7f8c8d;
+}
+
+#follow-up-hotel-questions {
+  margin-left: 2em;
+}
+
+.pure-form-aligned #questions .pure-control-group label {
+  display: flex;
+  margin-left: 1em;
+  text-align: left;
+  width: 90%;
+  padding: 3px;
+}
+
+.pure-control-group #booking-website, #travel-frequency {
+  display: contents;
+  /* text-align: ; */
+}
+
+
+.pure-form-aligned #questions .pure-control-group input {
+  margin-right: 0.5em;
+  margin-left: 1em;
+}
+
+#questions {
+  margin-left: 6em;
+}
+
+#preferred-hotel {
+  margin-left: 2em;
+}
+
+#submit-form {
+  margin-top: 1em;
+  margin-left: 2em;
+}

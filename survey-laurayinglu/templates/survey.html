@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Travel Survey</title>
+    <link rel="stylesheet" href="/css/pure/pure-min.css">
+    <link rel="stylesheet" href="/css/pure/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="/layouts/marketing/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/survey.css">
+  </head>
+
+
+  <body>
+    {% import 'header.html' as header %}
+    {{ header.survey_header() }}
+
+    <div id="survey-body" class="content">
+      <form id="survey-form" method="POST" class="pure-form pure-form-aligned">
+        <fieldset>
+          <div id="name" class="pure-control-group ">
+            <label for="name">Name</label>
+            <input type="text" class="pure-input-1-4" id="name" name="name" required minlength="3" placeholder="Name"
+              required="">
+          </div>
+
+          <div id="email" class="pure-control-group">
+            <label for="email">Email</label>
+            <input type="email" class="pure-input-1-3" id="email" name="email" required placeholder="Email Address"
+              required="">
+          </div>
+
+          <br />
+          <div id="questions">
+            <div class="pure-control-group">
+              <label id="travel-frequency">
+                1. How often do you book travel-related services (flights, hotels, etc.)?
+              </label>
+
+              <label id="rarely" for="rarely" class="pure-radio">
+                <input type="radio" name="travel_frequency" value="Rarely" checked=""> Rarely
+              </label>
+
+              <label id="once" for="once" class="pure-radio">
+                <input type="radio" name="travel_frequency" value="Once a year"> Once a year
+              </label>
+
+              <label id="twice" for="twice" class="pure-radio">
+                <input type="radio" name="travel_frequency" value="Twice a year"> Twice a year
+              </label>
+
+              <label id="more" for="more" class="pure-radio">
+                <input type="radio" name="travel_frequency" value="More than twice a year"> More than twice a year
+              </label>
+
+            </div>
+
+            <div class="pure-control-group">
+              <label id="booking-website">
+                2. Which website do you use most when buying flight tickets?
+              </label>
+
+              <label id="expedia" for="expedia" class="pure-radio">
+                <input type="radio" name="booking_website" value="Expedia" checked=""> Expedia
+              </label>
+
+              <label id="booking" for="booking" class="pure-radio">
+                <input type="radio" name="booking_website" value="Booking.com"> Booking.com
+              </label>
+
+              <label id="priceline" for="priceline" class="pure-radio">
+                <input type="radio" name="booking_website" value="priceline"> priceline
+              </label>
+
+              <label id="kayak" for="kayak" class="pure-radio">
+                <input type="radio" name="booking_website" value="Kayak"> Kayak
+              </label>
+
+            </div>
+
+            <div class="pure-control-group">
+              <label id="payment-method">
+                3. How do you prefer to pay for your travel bookings? (can choose multiple)
+              </label>
+
+              <label for="credit-card" class="pure-checkbox">
+                <input type="checkbox" id="credit-card" name="payment_method" value="Credit Card" /> Credit Card
+              </label>
+
+              <label for="debit-card" class="pure-checkbox">
+                <input type="checkbox" id="debit-card" name="payment_method" value="Debit Card" /> Debit Card
+              </label>
+
+              <label for="paypal" class="pure-checkbox">
+                <input type="checkbox" id="paypal" name="payment_method" value="Paypal" /> Paypal
+              </label>
+
+              <label for="other" class="pure-checkbox">
+                <input type="checkbox" id="other" name="payment_method" value="Other" /> Other (please specify)
+              </label>
+
+              <div id="follow-up-payment-questions">
+                <label for="other-payment-answer">Please specify other payment methods:</label>
+                <input type="text" id="other-payment-answer" name="other_payment_answer">
+              </div>
+
+            </div>
+
+
+            <div class="pure-control-group">
+              <label for="preferred-hotel">4. What are your preferred Hotel(s)? </label>
+              <select id="preferred-hotel" name="preferred_hotel">
+                <option value="">Select</option>
+                <option value="Hilton Hotel">Hilton Hotel</option>
+                <option value="Four Seasons Hotel">Four Seasons Hotel</option>
+                <option value="Holiday Inn Express">Holiday Inn Express</option>
+                <option value="The Plaza Hotel">The Plaza Hotel</option>
+              </select>
+
+              <div id="follow-up-hotel-questions">
+                <p>What do you like most about the hotel you selected?</p>
+                <textarea rows="5" cols="70" id="likeMost" name="hotel_like_most"></textarea>
+              </div>
+            </div>
+              
+            <div class="pure-control-group">
+              <!-- <input id="submit-form" type="submit" value="Next"> -->
+              <button id="submit-form" type="submit" class="pure-button pure-button-primary">Next</button>
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
+    </div>
+  </body>
+  <script src="../static/js/myjs.js"></script>
+
+</html>

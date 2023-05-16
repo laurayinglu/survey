@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <head>
+    <link rel="stylesheet" href="/css/pure/pure-min.css">
+    <link rel="stylesheet" href="/css/pure/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/styles.css">
+  </head>
+
+  <body>
+    {% import 'header.html' as header %}
+    {{ header.survey_header() }}
+
+    <div class="splash-container">
+      <div class="splash">
+
+        <!-- <div id="loginout">
+          {% if session %}
+            <p id="welcome">Welcome {{ session.user.userinfo.name }}!</p>
+            <a id="logout-button" class="pure-button pure-button-primary" href="/logout">Log out</a>
+          {% else %}
+              <p id="welcome">Welcome! Please log in first. </p>
+              <a id="login-button" class="pure-button pure-button-primary" href="/login">Login</a>
+          {% endif %}
+        </div> -->
+
+        <h1 class="splash-head">Survey description</h1>
+        <p id="survey-des" class="splash-subhead">
+          We are conducting a survey to understand the preferences and habits of travelers when booking flights, hotels,
+          and other travel-related services. Your participation in this survey will help us gather valuable insights
+          that will be used to improve the travel booking experience. The survey will take approximately 5 minutes to
+          complete and all responses will be kept confidential.
+        </p>
+        <p id="buttons">
+          <a href="/survey" id="consent-button" class="pure-button pure-button-primary">Consent</a>
+          <a href="/decline" id="decline-button" class="pure-button pure-button-primary">Decline</a>
+        </p>
+      </div>
+    </div>
+
+  </body>
+  <script src="../static/js/myjs.js"></script>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Travel Survey</title>
+    <link rel="stylesheet" href="/css/pure/pure-min.css">
+    <link rel="stylesheet" href="/css/pure/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="/layouts/marketing/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/survey.css">
+  </head>
+
+  <body>
+
+    {% import 'header.html' as header %}
+    {{ header.survey_header() }}
+
+    <h1 style="margin-top: 2em; margin-left: 1em">Travel Survey all responses</h1>
+    {% for response in res %}
+      {% for question, answer in response.items():%}
+      <div> 
+        {% if question == "id" %}
+          <h3 style="margin-left: 2em">Response {{ question }} # {{ answer }}: </h3>
+        {% endif %}
+        <ul style="margin-left: 4em; padding-inline: 0; margin-block: 0;">
+          {% if question == "date_time_added" %}
+            <li>Form Submitted: {{ answer }}</li>
+          {% endif %}
+
+          {% if question != "id" and  question != "date_time_added"%}
+            <li>{{ questions_dict[question] }} {{ answer }}</li>
+          {% endif %}
+        </ul>
+      </div>
+      {% endfor %}
+      <br />
+    {% endfor %}
+  </body>
+
+</html>
